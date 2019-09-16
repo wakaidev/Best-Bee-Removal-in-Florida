@@ -4,7 +4,7 @@
   position: fixed;
   top: 0;
   z-index: 99;
-  background: deepskyblue;
+  background: slategrey;
   width: 100%;
   display: -webkit-box;
   display: -moz-box;
@@ -28,7 +28,7 @@ align-items: center;
   text-decoration: none;
   display: block;
   padding: 1em;
-  color: white;
+  color: black;
 }
 
 .navigation a:hover {

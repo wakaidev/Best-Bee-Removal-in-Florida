@@ -5,14 +5,45 @@ body { margin: 0; }
 #content { background: red; }
 #details { background: green; }
 
-html, body, #container { height: 100%; }
-#header { height: 80px; }
-#main { display: flex; height: calc(100% - 80px); }
-#sidebar { overflow-y: auto; height: 100%; min-width: 100px; }
-#content { height: 100%; width: 100%; }
-#list { overflow-y: auto; height: 70%; }
-#details { overflow-y: auto; height: 30%; }
+html, body, #container {
+  height: 100%;
+}
+
+#header {
+  height: 80px;
+}
+
+#main {
+  display: flex;
+  height: calc(100% - 80px);
+}
+
+#sidebar {
+  overflow-y: auto;
+  height: 100%;
+  min-width: 100px;
+}
+
+#content {
+  height: 100%;
+  width: 100%;
+}
+
+#list {
+  overflow-y: auto;
+  height: 70%;
+}
+
+#details {
+  overflow-y: auto;
+  height: 30%;
+}
 
 .main-header .main-nav {
-display: flex;
+  display: flex;
+}
+
+.main-nav {
+  list-style: none;
+  justify-content: center;
 }
