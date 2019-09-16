@@ -1,0 +1,43 @@
+* { background-color: rgba(255,0,0,.2); }
+* * { background-color: rgba(0,255,0,.2); }
+* * * { background-color: rgba(0,0,255,.2); }
+* * * * { background-color: rgba(255,0,255,.2); }
+* * * * * { background-color: rgba(0,255,255,.2); }
+* * * * * * { background-color: rgba(255,255,0,.2); }
+* * * * * * * { background-color: rgba(255,0,0,.2); }
+* * * * * * * * { background-color: rgba(0,255,0,.2); }
+* * * * * * * * * { background-color: rgba(0,0,255,.2); }
+
+
+
+html {
+  /* Setting the height to 100 percent. I have seen this before */
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  overflow: hidden; /*makes the body non-scrollable (we will add scrolling to the sidebar and main content containers)*/
+  margin: 0px; /*removes default style*/
+  display: flex; /*enables flex content for its children*/
+  box-sizing: border-box;
+}
+
+.main-header {
+  background-color: grey;
+  border: 1px solid red;
+  height: 10%;
+  width: 100%;
+}
+
+.main-nav nav ul {
+  list-style-type: none;
+
+}
+
+
+.column {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
