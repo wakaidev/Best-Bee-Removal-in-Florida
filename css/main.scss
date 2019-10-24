@@ -1,11 +1,30 @@
 @import url('https://fonts.googleapis.com/css?family=Nobile:400,700&display=swap');
 
+// Deep Lemon (#F3C622),
+// Dark Gunmetal (#23212C), primary
+// Yellow Orange (#FCB43A),
+// Onyx (#3A3637),
+// Metallic Yellow (#FCD615) and Rufous (#992409).
+
+$colors: (
+    darkGunmetal: #23212C,
+    deepLemon: #F3C622,
+    yellowOrange: #FCB43A,
+    onyx: #3A3637,
+    metallicYellow: #FCD615,
+    rufous: #992409
+);
+
+@function color($color-name) {
+    @return map-get($colors, $color-name)
+}
+
 body {
     margin: 0;
     height: 100vh;
-    background: #191919;
+    background: color(darkGunmetal);
     font-family: 'Nobile';
-    // scroll-snap-type: y mandatory;
+    scroll-snap-type: y mandatory;
 }
 
 *, *:before, *:after {
@@ -13,6 +32,11 @@ body {
 }
 
 
+
+.snap {
+    scroll-snap-align: start;
+    border: 2px green solid;
+}
 
 
 .container {
@@ -30,12 +54,12 @@ body {
         font-weight: normal;
         font-size: 3em;
         line-height: .9em;
-        color: white;
+        color: color(metallicYellow);
     }
 
     p {
         line-height: 1.5em;
-        color: rgb(194, 194, 194);
+        color: color(deepLemon);
     }
 
     .line {
@@ -60,10 +84,7 @@ body {
     }
 }
 
-.snap {
-    // scroll-snap-align: start;
-    border: 2px green solid;
-}
+
 
 header {
     display: flex;
@@ -72,37 +93,37 @@ header {
 }
 
 .logo {
-    color: white;
+    color: color(metallicYellow);
     text-decoration: none;
     font-weight: bold;
     font-size: 1.1em;
 }
 
 h2 {
-    color: white;
+    color: color(metallicYellow);
     font-size: 3em;
     margin: 0;
     font-weight: normal;
     
 }
-.subtext {
-    margin-top: 0;
-    font-size: 1.4em;
-    text-transform: uppercase;
-}
-// .services, .about, .contact {
-//     margin-top: -3em;
-// }
+
+
 
 
  .contact {
-
+    text-align: center;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
         h2 {
-            color: black;
+            color: color(metallicYellow);
         }
         a {
             text-decoration: none;
-            color: black;
+            text-align: center;
+            color: white;
+            font-size: 3em;
         }
     }
 
