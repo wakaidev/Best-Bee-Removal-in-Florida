@@ -1,0 +1,6 @@
+html {
+  /* border-box box model allows us to add padding and border to our elements without increasing their size */
+  box-sizing: border-box;
+
+  font-size: calc(1em + 1vw)
+}

@@ -1,130 +1,323 @@
-@import url('https://fonts.googleapis.com/css?family=Nobile:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Work+Sans&display=swap');
 
-// Deep Lemon (#F3C622),
-// Dark Gunmetal (#23212C), primary
-// Yellow Orange (#FCB43A),
-// Onyx (#3A3637),
-// Metallic Yellow (#FCD615) and Rufous (#992409).
+$background: rgba(215, 226, 58, 0.863);
 
-$colors: (
-    darkGunmetal: #23212C,
-    deepLemon: #F3C622,
-    yellowOrange: #FCB43A,
-    onyx: #3A3637,
-    metallicYellow: #FCD615,
-    rufous: #992409
-);
+html {
+  /* border-box box model allows us to add padding and border to our elements without increasing their size */
+  box-sizing: border-box;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 400;
+}
 
-@function color($color-name) {
-    @return map-get($colors, $color-name)
+/*
+  WAT IS THIS?!
+  We inherit box-sizing: border-box; from our <html> selector
+  Apparently this is a bit better than applying box-sizing: border-box; directly to the * selector
+*/
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+
 }
 
 body {
-    margin: 0;
-    height: 100vh;
-    background: color(darkGunmetal);
-    font-family: 'Nobile';
-    scroll-snap-type: y mandatory;
+  margin: 0;
+  background: #222;
+
 }
 
-*, *:before, *:after {
-    box-sizing: border-box;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 5px 0;
 }
 
+// @media screen and (min-width: 800px) {
+//   .services {
+//     display: grid;
+//     grid-template-columns: repeat(3, 1fr);
+//     grid-template-rows: auto 1fr;
 
 
-.snap {
-    scroll-snap-align: start;
-    border: 2px green solid;
-}
+//     h2 {
+//       grid-column: span 3;
+//     }
+//   }
 
+//   .service {
+//     grid-row-start: 2;
+//   }
+//   .bee-removal-service {
+//     grid-column: 1;
+//   }
+//   .wasp-removal-service {
+//     grid-column: 2;
+//   }
+//   .wildlife-removal-service {
+//     grid-column: 3 / -1;
+//   }
+// }
 
-.container {
-    
-    padding: 2em;
-    height: 100vh;
-     &:first-child {
-         display: grid;
-         grid-template-rows: 10% 10% auto;
-         border: 1px red solid;
-     }
-    h1 {
-        text-align: center;
-        margin-top: 2em;
-        font-weight: normal;
-        font-size: 3em;
-        line-height: .9em;
-        color: color(metallicYellow);
+.content {
+
+  border: 1px solid red;
+  background-color: #333;
+  background-blend-mode: multiply;
+  background-size: cover;
+
+  display: grid;
+  // place-items: center;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 5em auto 1fr auto 20px;
+  gap: 2px;
+  text-align: center;
+
+  p {
+    // padding: 0 2em;
+    font-size: 1.5em
+  }
+
+  .content>* {
+    min-width: 0;
+  }
+
+  .contact {
+    grid-column: span 12;
+    grid-row: 2 / 2;
+    border: 1px solid yellow;
+    min-width: 0;
+    padding: 1.75em;
+
+    h2 {
+      color: white;
+      // padding: 1rem 0;
+      margin: 0;
     }
 
-    p {
-        line-height: 1.5em;
-        color: color(deepLemon);
+    a {
+      text-decoration: none;
+      font-size: 2em;
+      color: white;
+      margin: 0;
+      padding: 0;
+      // padding-bottom: 5em;
+    }
+  }
+
+  .services {
+    color: white;
+    grid-column: span 12;
+    grid-row: 3 / 4;
+    border: 1px solid blue;
+
+    background-image: url(../img/bees-1806219_960_720.jpg);
+    background-color: rgb(59, 59, 59);
+    background-blend-mode: multiply;
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+      color: white;
+      font-size: 3rem;
+      text-decoration: underline;
+      align-self: center;
+      justify-self: center;
+      // padding: 1rem;
+      margin: 0;
+      min-width: 0;
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+
     }
 
-    .line {
-        align-self: end;
-        width: 50%;
-        border-right: 1px solid white;
-        height: 55%;
-        margin-bottom: 6em;
-        position: relative;
-
-        &::after {
-            content: ' ';
-            position: absolute;
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 11px 11px 0 11px;
-            border-color: white transparent transparent transparent;
-            right: -.7em;
-            bottom: -2px;
-        }
+    h3 {
+      font-size: 2.5rem;
+      text-decoration: underline;
     }
+
+    .service {
+      border: 1px red solid;
+      // background: pink;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 5em 0;
+    }
+
+  }
+
+  .about {
+    grid-column: 2 / 12;
+    grid-row: 4 / 5;
+    border: 1px solid red;
+
+  }
+
+
 }
 
-
+/* Navigation Styles */
 
 header {
-    display: flex;
-    justify-content: space-between;
+  background: $background;
+  text-align: center;
+  position: fixed;
+  z-index: 999;
+  width: 100%;
 
+  h1 {
+    padding-left: 1em;
+  }
 }
 
-.logo {
-    color: color(metallicYellow);
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.1em;
+.nav-toggle {
+  display: none;
 }
 
-h2 {
-    color: color(metallicYellow);
-    font-size: 3em;
+.nav-toggle-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 1em;
+  border: 1px solid blue;
+  height: 100%;
+  display: flex;
+  align-items: center;
+
+  span,
+  span::before,
+  span::after {
+    display: block;
+    background: white;
+    height: 2px;
+    width: 2em;
+    border-radius: 2px;
+    position: relative;
+  }
+
+  span::before,
+  span::after {
+    content: '';
+    position: absolute;
+  }
+
+  span::before {
+    bottom: 7px;
+  }
+
+  span::after {
+    top: 7px;
+  }
+}
+
+
+nav {
+  position: absolute;
+  text-align: left;
+  top: 100%;
+  left: 0;
+  background: $background;
+  width: 100%;
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: transform 400ms ease-in-out;
+
+
+  ul {
     margin: 0;
-    font-weight: normal;
-    
+    padding: 0;
+    list-style: none;
+
+    li {
+      margin-bottom: 1em;
+      margin-left: 1em;
+    }
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+
+    &:hover {
+      color: #000;
+    }
+  }
 }
 
+.nav-toggle:checked~nav {
+  transform: scale(1, 1);
 
+  a {
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 250ms;
+  }
+}
 
+@media screen and (min-width: 800px) {
+  .nav-toggle-label {
+    display: none;
+  }
 
- .contact {
-    text-align: center;
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
+  header {
+    display: grid;
+    grid-template-columns: 1fr auto minmax(600px, 1fr) 1fr;
+
+    h1 {
+      padding-left: 0;
+    }
+  }
+
+  .logo {
+    grid-column: 2 / 3;
+  }
+
+  nav {
+    all: unset;
+    grid-column: 3 / 4;
+    display: flex;
+    justify-content: flex-end;
     align-items: center;
-        h2 {
-            color: color(metallicYellow);
-        }
-        a {
-            text-decoration: none;
-            text-align: center;
-            color: white;
-            font-size: 3em;
-        }
+
+    a {
+      opacity: 1;
+      position: relative;
     }
 
+    a::before {
+      content: '';
+      display: block;
+      height: 5px;
+      background: black;
+      top: -.75em;
+      left: 0;
+      right: 0;
+      transform: scale(0, 1);
+      transition: transform ease-in-out 250ms;
+    }
 
+    a:hover::before {
+      transform: scale(1, 1);
+    }
+
+    ul {
+      display: flex;
+
+      li {
+        margin-left: 3em;
+        margin-bottom: 0;
+      }
+    }
+
+  }
+}
