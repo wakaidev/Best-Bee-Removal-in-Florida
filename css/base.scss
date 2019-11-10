@@ -1,6 +1,657 @@
-html {
-  /* border-box box model allows us to add padding and border to our elements without increasing their size */
-  box-sizing: border-box;
+@import url('https://fonts.googleapis.com/css?family=Lexend+Deca|Lexend+Exa&display=swap');
 
-  font-size: calc(1em + 1vw)
+$auto-grid-min-size: 240px;
+$nav-background-color: white;
+$nav-text-color: black;
+$nav-hover-color: purple;
+
+
+html {
+  box-sizing: border-box;
+  font-size: calc(1em + 1vw);
+  font-family: 'Lexend Deca', sans-serif;
+}
+
+/*
+  WAT IS THIS?!
+  We inherit box-sizing: border-box; from our <html> selector
+  Apparently this is a bit better than applying box-sizing: border-box; directly to the * selector
+*/
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+
+}
+
+/* Remove default padding */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Natural floor and rhythm in articles by default */
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: auto !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* End Resets */
+
+
+/* Start Styles */
+body {
+  background-image: url("../img/topography.svg"),
+    linear-gradient(180deg, #f3f72b, #949494);
+    background-size: 350px, auto;
+    min-height: calc(100vh - 100px);
+    background-attachment: fixed;
+
+  
+}
+
+
+
+
+// BEGIN NAV STYLES FROM KEVIN POWELL CODEPEN
+// https://codepen.io/kevinpowell/pen/jxppmr
+
+
+header {
+  background: $nav-background-color;
+  text-align: center;
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  top: 0;
+}
+
+/* changed this from the tutorial video to
+   allow it to gain focus, making it tabbable */
+
+.logo {
+  font-size: 1.2em;
+}
+.nav-toggle {
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+}
+
+.nav-toggle:focus~.nav-toggle-label {
+  outline: 3px solid rgba(lightblue, .75);
+}
+
+.nav-toggle-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 1em;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  display: block;
+  background: $nav-text-color;
+  height: 2px;
+  width: 2em;
+  border-radius: 2px;
+  position: relative;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  content: '';
+  position: absolute;
+}
+
+.nav-toggle-label span::before {
+  bottom: 7px;
+}
+
+.nav-toggle-label span::after {
+  top: 7px;
+}
+
+nav {
+  position: absolute;
+  text-align: left;
+  top: 100%;
+  left: 0;
+  background: $nav-background-color;
+  width: 100%;
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: transform 400ms ease-in-out;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  margin-bottom: 1em;
+  margin-left: 1em;
+}
+
+nav a {
+  color: $nav-text-color;
+  text-decoration: none;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 150ms ease-in-out;
+}
+
+nav a:hover {
+  color: $nav-hover-color;
+}
+
+.nav-toggle:checked~nav {
+  transform: scale(1, 1);
+}
+
+.nav-toggle:checked~nav a {
+  opacity: 1;
+  transition: opacity 250ms ease-in-out 250ms;
+}
+
+@media screen and (min-width: 720px) {
+  .logo {
+    font-size: 1.0em;
+  }
+  .nav-toggle-label {
+    display: none;
+  }
+
+  header {
+    display: grid;
+    grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+  }
+
+  .logo {
+    grid-column: 2 / 3;
+  }
+
+  nav {
+    // all: unset; /* this causes issues with Edge, since it's unsupported */
+
+    /* the following lines are not from my video, but add Edge support */
+    position: relative;
+    text-align: left;
+    transition: none;
+    transform: scale(1, 1);
+    background: none;
+    top: initial;
+    left: initial;
+    /* end Edge support stuff */
+
+    grid-column: 3 / 4;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  nav ul {
+    display: flex;
+  }
+
+  nav li {
+    margin-left: 3em;
+    margin-bottom: 0;
+  }
+
+  nav a {
+    opacity: 1;
+    position: relative;
+  }
+
+  nav a::before {
+    content: '';
+    display: block;
+    height: 5px;
+    background: black;
+    position: absolute;
+    top: -.75em;
+    left: 0;
+    right: 0;
+    transform: scale(0, 1);
+    transition: transform ease-in-out 250ms;
+  }
+
+  nav a:hover::before {
+    transform: scale(1, 1);
+  }
+}
+
+header>nav>ul>li>a>svg {
+  color: black;
+  height: 1em;
+  width: 1em;
+  justify-self: center;
+  align-self: center;
+}
+
+// END NAV STYLES
+
+
+.content {
+  // display: grid;
+  // grid-template-columns: repeat(auto-fit, minmax($auto-grid-min-size, 1fr));
+  // gap: 5px;
+  margin: 1rem;
+  position: relative;
+  top: 1.3em;
+  margin-bottom: 7rem;
+
+  @media (min-width: 720px) {
+    top: 1.5rem;
+  }
+}
+
+.contact,
+.about,
+.service,
+.blog,
+.video-bg,
+header,
+.testimonial {
+  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+}
+
+.contact {
+  
+  grid-column: 1 / -1;
+  // General and shared styles
+  background: grey;
+  background: linear-gradient(180deg, grey, lightgrey);
+  text-align: center;
+  margin-bottom: 1em;
+  
+  
+
+  // Grid Fallback
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  
+  
+  a {
+    display: flex;
+    flex-direction: column;
+
+    padding: 2rem 2rem;
+    text-decoration-style: none;
+    text-align: center;
+
+    @media screen and (min-width: 720px) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  * {
+    color: black;
+    text-decoration: none;
+    font: inherit; 
+  }
+}
+
+.about {
+  position: relative;
+  overflow: hidden;
+  background: rgba(0,0,0,0.5);
+  color: white;
+  
+  .video-bg {
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+
+    @media (max-width: 720) {
+      display: none;
+    }
+  }
+    
+  // General and shared styles
+  
+  text-align: center;
+  
+  // Grid Fallback
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  // Supports Grid
+  display: grid;
+  @media screen and (max-width: 620px) {
+    grid-template-columns: 1fr;
+  }
+  grid-template-columns: repeat(auto-fit, minmax($auto-grid-min-size, 1fr));
+  align-items: center;
+  justify-items: center;
+
+  h2 {
+    
+    height: 100%;
+    width: 100%;
+
+    padding: 2rem;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  p.about-text {
+    padding: 1rem 1rem 2rem 1rem;
+  }
+}
+
+.services {
+  // padding: 1rem 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($auto-grid-min-size, 1fr));
+  grid-template-rows: 100px 1fr;
+  gap: 10px;
+  
+  h2 {
+    align-self: center;
+  }
+
+  @media (min-width: 720px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  
+  // align-items: center;
+  justify-items: center;
+  // align-content: center;
+  h2 {
+    grid-column: 1 / -1;
+    // padding-bottom: 0.25rem;
+  }
+
+  .service {
+    background: grey;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .bee-removal-service {
+    background-image: url("../img/bee1.jpg");
+  }
+  .wasp-removal-service {
+    background-image: url("../img/wasp1.jpg");
+  }
+  .wildlife-removal-service {
+    background-image: url("../img/coons.jpg");
+    
+  }
+
+  .bee-removal-service,
+  .wasp-removal-service,
+  .wildlife-removal-service {
+    min-height: 50vh;
+    background-color: #444;
+    background-blend-mode: multiply;
+    background-size: cover;
+    border-radius: 5px;
+    color: white;
+    
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+
+    h3 {
+      font-size: 2em;
+    }
+  }
+}
+
+.testimonials {
+  display: grid;
+  grid-template-rows: 100px 1fr;
+  gap: 10px;
+  
+  h2 {
+    grid-row: 1 / 2;
+    text-align: center;
+    align-self: center;
+  }
+
+
+  .testimonial {
+    background-image: url("../img/bee1.jpg");
+    background-color: #444;
+    background-blend-mode: multiply;
+    background-size: cover;
+    border-radius: 5px;
+    color: white;
+    padding: 1em;
+
+    display: flex;
+    flex-direction: column;
+
+    .testimonial-title {
+      font-size: 1.2em;
+      text-decoration-line: underline;
+      padding-bottom: 1em;
+    }
+
+    .testimonial-name {
+      font-size: 1em;
+      padding-bottom: 1em;
+    }
+
+    p {
+      text-align: center;
+    }
+  }
+}
+
+.blog-header {
+  text-align: center;
+  padding: 0;
+  padding-top: 1rem;
+  margin: 0;
+  font-size: 1.5rem;
+
+  
+}
+.blog {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+  background: white;
+  max-width: 1000px;
+  margin-right: auto;
+  margin-left: auto;
+
+
+  .post {
+    
+    // flex backup
+    display: flex;
+    flex-direction: column;
+
+    // support grid
+    display: grid;
+    grid-template-columns: 1fr 12fr 1fr;
+    gap: 10px;
+    &>* {
+      grid-column: 2 / 3;
+    }
+
+    h2 {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    .date {
+      text-decoration: underline;
+    }
+
+    figure {
+      margin: 0;
+      grid-column: 1 / -1;
+    }
+
+    figcaption {
+      font-size: 10px;
+    }
+
+    blockquote {
+      grid-column: 1 / -1;
+      font-size: 1.5em;
+      text-align: center;
+      margin: 0;
+    }
+
+    .tip {
+      background: #FAFAFA;
+      padding: 10px;
+      border: 2px solid yellow;
+    }
+
+
+    @media (min-width: 720px) {
+      grid-template-columns: 3fr 12fr 5fr;
+
+      h2 {
+        padding-left: 0;
+        margin-left: 0;
+        text-align: left;
+      }
+      &>* {
+        grid-column: 2 / -2;
+      }
+
+      figure {
+        margin: 0;
+        grid-column: 1 / -1;
+      }
+
+      .tip {
+        grid-row: span 5;
+        align-self: start; 
+      }
+
+      .tip-right {
+        grid-column: span 1 / -1;
+        border: none;
+        border-left: 2px solid yellow;
+      }
+      .tip-left {
+        grid-column: 1 / span 1;
+        text-align: right;
+        border: none;
+        border-right: 2px solid yellow;
+      }
+
+      blockquote {
+        padding: 0.5em 1em;
+      }
+    }
+
+    
+    
+  }
+}
+
+footer {
+  height: 10vh;
+  width: 100%;
+  background: black;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .icon-credit,
+  .icon-credit > * {
+    font-size: 1px;
+    display: none;
+  }
 }
