@@ -1,4 +1,38 @@
+@charset "UTF-8";
+/**
+ * CONTENTS
+ *
+ * SETTINGS
+ * Global...............Globally-available variables and config.
+ *
+ * TOOLS
+ * Mixins...............Useful mixins.
+ *
+ * GENERIC
+ * Normalize.css........A level playing field.
+ * Box-sizing...........Better default `box-sizing`.
+ *
+ * BASE
+ * Headings.............H1–H6 styles.
+ *
+ * OBJECTS
+ * Wrappers.............Wrapping and constraining elements.
+ *
+ * COMPONENTS
+ * Page-head............The main page header.
+ * Page-foot............The main page footer.
+ * Buttons..............Button elements.
+ *
+ * TRUMPS
+ * Text.................Text helpers.
+ */
+/*------------------------------------*\
+  #SETTINGS-Global
+\*------------------------------------*/
 @import url("https://fonts.googleapis.com/css?family=Lexend+Deca|Lexend+Exa&display=swap");
+/*------------------------------------*\
+  #RESETS
+\*------------------------------------*/
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -93,8 +127,9 @@ select {
   }
 }
 
-/* End Resets */
-/* Start Styles */
+/*------------------------------------*\
+  #BODY-STYLES
+\*------------------------------------*/
 body {
   background-image: url("../img/topography.svg"), -webkit-gradient(linear, left top, left bottom, from(#f3f72b), to(#949494));
   background-image: url("../img/topography.svg"), linear-gradient(180deg, #f3f72b, #949494);
@@ -103,6 +138,9 @@ body {
   background-attachment: fixed;
 }
 
+/*------------------------------------------------------*\
+  #NAV-STYLES https://codepen.io/kevinpowell/pen/jxppmr
+\*------------------------------------------------------*/
 header {
   background: white;
   text-align: center;
@@ -309,6 +347,9 @@ header > nav > ul > li > a > svg {
       align-self: center;
 }
 
+/*------------------------------------*\
+  #CONTENT
+\*------------------------------------*/
 .content {
   margin: 1rem;
   position: relative;
@@ -334,6 +375,9 @@ header,
   border-radius: 5px;
 }
 
+/*------------------------------------*\
+  #CONTACT
+\*------------------------------------*/
 .contact {
   grid-column: 1 / -1;
   background: grey;

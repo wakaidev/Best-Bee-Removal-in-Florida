@@ -1,3 +1,38 @@
+/**
+ * CONTENTS
+ *
+ * SETTINGS
+ * Global...............Globally-available variables and config.
+ *
+ * TOOLS
+ * Mixins...............Useful mixins.
+ *
+ * GENERIC
+ * Normalize.css........A level playing field.
+ * Box-sizing...........Better default `box-sizing`.
+ *
+ * BASE
+ * Headings.............H1–H6 styles.
+ *
+ * OBJECTS
+ * Wrappers.............Wrapping and constraining elements.
+ *
+ * COMPONENTS
+ * Page-head............The main page header.
+ * Page-foot............The main page footer.
+ * Buttons..............Button elements.
+ *
+ * TRUMPS
+ * Text.................Text helpers.
+ */
+
+
+
+
+/*------------------------------------*\
+  #SETTINGS-Global
+\*------------------------------------*/
+
 @import url('https://fonts.googleapis.com/css?family=Lexend+Deca|Lexend+Exa&display=swap');
 
 $auto-grid-min-size: 240px;
@@ -5,6 +40,13 @@ $nav-background-color: white;
 $nav-text-color: black;
 $nav-hover-color: purple;
 
+
+
+
+
+/*------------------------------------*\
+  #RESETS
+\*------------------------------------*/
 
 html {
   box-sizing: border-box;
@@ -96,26 +138,29 @@ select {
   }
 }
 
-/* End Resets */
 
 
-/* Start Styles */
+
+
+/*------------------------------------*\
+  #BODY-STYLES
+\*------------------------------------*/
+
 body {
   background-image: url("../img/topography.svg"),
     linear-gradient(180deg, #f3f72b, #949494);
     background-size: 350px, auto;
     min-height: calc(100vh - 100px);
-    background-attachment: fixed;
-
-  
+    background-attachment: fixed;  
 }
 
 
 
 
-// BEGIN NAV STYLES FROM KEVIN POWELL CODEPEN
-// https://codepen.io/kevinpowell/pen/jxppmr
 
+/*------------------------------------------------------*\
+  #NAV-STYLES https://codepen.io/kevinpowell/pen/jxppmr
+\*------------------------------------------------------*/
 
 header {
   background: $nav-background-color;
@@ -298,8 +343,13 @@ header>nav>ul>li>a>svg {
   align-self: center;
 }
 
-// END NAV STYLES
 
+
+
+
+/*------------------------------------*\
+  #CONTENT
+\*------------------------------------*/
 
 .content {
   // display: grid;
@@ -325,6 +375,14 @@ header,
   box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.5);
   border-radius: 5px;
 }
+
+
+
+
+
+/*------------------------------------*\
+  #CONTACT
+\*------------------------------------*/
 
 .contact {
   
