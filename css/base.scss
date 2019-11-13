@@ -498,53 +498,55 @@ header,
   @media (min-width: 720px) {
     grid-template-columns: 1fr 1fr 1fr;
   }
-  
-  // align-items: center;
+
   justify-items: center;
-  // align-content: center;
+  
   h2 {
     grid-column: 1 / -1;
-    // padding-bottom: 0.25rem;
-  }
-
-  .service {
-    background: grey;
-    padding: 1rem;
-    text-align: center;
-  }
-
-  .bee-removal-service {
-    background-image: url("../img/bee1.jpg");
-  }
-  .wasp-removal-service {
-    background-image: url("../img/wasp1.jpg");
-  }
-  .wildlife-removal-service {
-    background-image: url("../img/coons.jpg");
-    
-  }
-
-  .bee-removal-service,
-  .wasp-removal-service,
-  .wildlife-removal-service {
-    min-height: 50vh;
-    background-color: #444;
-    background-blend-mode: multiply;
-    background-size: cover;
-    border-radius: 5px;
-    color: white;
-    
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    align-items: center;
-    justify-content: center;
-
-    h3 {
-      font-size: 2em;
-    }
   }
 }
+
+.service {
+  background: grey;
+  padding: 1rem;
+  text-align: center;
+}
+
+.bee-removal-service {
+  background-image: url("../img/bee1.jpg");
+}
+
+.wasp-removal-service {
+  background-image: url("../img/wasp1.jpg");
+}
+
+.wildlife-removal-service {
+  background-image: url("../img/coons.jpg");
+
+}
+
+.bee-removal-service,
+.wasp-removal-service,
+.wildlife-removal-service {
+  min-height: 50vh;
+  background-color: #444;
+  background-blend-mode: multiply;
+  background-size: cover;
+  border-radius: 5px;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+
+  h3 {
+    font-size: 2em;
+  }
+}
+
+
 
 .testimonials {
   display: grid;
@@ -598,6 +600,7 @@ header,
 
   
 }
+
 
 .blog {
   margin-top: 1em;

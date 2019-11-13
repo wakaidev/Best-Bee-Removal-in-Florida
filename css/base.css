@@ -532,27 +532,27 @@ header,
   grid-column: 1 / -1;
 }
 
-.services .service {
+.service {
   background: grey;
   padding: 1rem;
   text-align: center;
 }
 
-.services .bee-removal-service {
+.bee-removal-service {
   background-image: url("../img/bee1.jpg");
 }
 
-.services .wasp-removal-service {
+.wasp-removal-service {
   background-image: url("../img/wasp1.jpg");
 }
 
-.services .wildlife-removal-service {
+.wildlife-removal-service {
   background-image: url("../img/coons.jpg");
 }
 
-.services .bee-removal-service,
-.services .wasp-removal-service,
-.services .wildlife-removal-service {
+.bee-removal-service,
+.wasp-removal-service,
+.wildlife-removal-service {
   min-height: 50vh;
   background-color: #444;
   background-blend-mode: multiply;
@@ -576,9 +576,9 @@ header,
           justify-content: center;
 }
 
-.services .bee-removal-service h3,
-.services .wasp-removal-service h3,
-.services .wildlife-removal-service h3 {
+.bee-removal-service h3,
+.wasp-removal-service h3,
+.wildlife-removal-service h3 {
   font-size: 2em;
 }
 
