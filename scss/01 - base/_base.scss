@@ -4,3 +4,40 @@
 
 */
 
+/*------------------------------------*\
+  #BODY-STYLES
+\*------------------------------------*/
+
+body {
+  background-image: url("../img/topography.svg"),
+    linear-gradient(180deg, #f3f72b, #949494);
+  background-size: 350px, auto;
+  min-height: calc(100vh - 100px);
+  background-attachment: fixed;
+}
+
+/*------------------------------------*\
+  #CONTENT
+\*------------------------------------*/
+
+.content {
+  margin: 1rem;
+  position: relative;
+  top: 1.3em;
+  margin-bottom: 7rem;
+
+  @media (min-width: 720px) {
+    top: 1.5rem;
+  }
+}
+
+.contact,
+.about,
+.service,
+.blog,
+.video-bg,
+header,
+.testimonial {
+  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+}

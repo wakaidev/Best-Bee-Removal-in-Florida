@@ -1,0 +1,49 @@
+.about {
+  position: relative;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+
+  .video-bg {
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+
+    @media (max-width: 720) {
+      display: none;
+    }
+  }
+
+  // General and shared styles
+
+  text-align: center;
+
+  // Grid Fallback
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  // Supports Grid
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax($auto-grid-min-size, 1fr));
+  align-items: center;
+  justify-items: center;
+}
+
+.about__header {
+  height: 100%;
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about__text {
+  padding: 1em;
+}

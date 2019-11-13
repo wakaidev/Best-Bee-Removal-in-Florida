@@ -1,38 +1,7 @@
-@charset "UTF-8";
-/**
- * CONTENTS
- *
- * SETTINGS
- * Global...............Globally-available variables and config.
- *
- * TOOLS
- * Mixins...............Useful mixins.
- *
- * GENERIC
- * Normalize.css........A level playing field.
- * Box-sizing...........Better default `box-sizing`.
- *
- * BASE
- * Headings.............H1–H6 styles.
- *
- * OBJECTS
- * Wrappers.............Wrapping and constraining elements.
- *
- * COMPONENTS
- * Page-head............The main page header.
- * Page-foot............The main page footer.
- * Buttons..............Button elements.
- *
- * TRUMPS
- * Text.................Text helpers.
- */
-/*------------------------------------*\
-  #SETTINGS-Global
-\*------------------------------------*/
-@import url("https://fonts.googleapis.com/css?family=Lexend+Deca|Lexend+Exa&display=swap");
 /*-------------------------------------*\
   #RESETS
 \*-------------------------------------*/
+@import url("https://fonts.googleapis.com/css?family=Lexend+Deca|Lexend+Exa&display=swap");
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -127,6 +96,11 @@ select {
   }
 }
 
+/* 
+  This is the base CSS file
+  basic page setup should happen here. All other site elements get their own partial.
+
+*/
 /*------------------------------------*\
   #BODY-STYLES
 \*------------------------------------*/
@@ -136,6 +110,34 @@ body {
   background-size: 350px, auto;
   min-height: calc(100vh - 100px);
   background-attachment: fixed;
+}
+
+/*------------------------------------*\
+  #CONTENT
+\*------------------------------------*/
+.content {
+  margin: 1rem;
+  position: relative;
+  top: 1.3em;
+  margin-bottom: 7rem;
+}
+
+@media (min-width: 720px) {
+  .content {
+    top: 1.5rem;
+  }
+}
+
+.contact,
+.about,
+.service,
+.blog,
+.video-bg,
+header,
+.testimonial {
+  -webkit-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.5);
+          box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
 }
 
 /*------------------------------------------------------*\
@@ -348,34 +350,6 @@ header > nav > ul > li > a > svg {
 }
 
 /*------------------------------------*\
-  #CONTENT
-\*------------------------------------*/
-.content {
-  margin: 1rem;
-  position: relative;
-  top: 1.3em;
-  margin-bottom: 7rem;
-}
-
-@media (min-width: 720px) {
-  .content {
-    top: 1.5rem;
-  }
-}
-
-.contact,
-.about,
-.service,
-.blog,
-.video-bg,
-header,
-.testimonial {
-  -webkit-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.5);
-          box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.5);
-  border-radius: 5px;
-}
-
-/*------------------------------------*\
   #CONTACT
 \*------------------------------------*/
 .contact {
@@ -566,9 +540,7 @@ header,
           justify-content: center;
 }
 
-.bee-removal-service h3,
-.wasp-removal-service h3,
-.wildlife-removal-service h3 {
+.service__header {
   font-size: 2em;
 }
 
@@ -759,4 +731,4 @@ footer {
   font-size: 1px;
   display: none;
 }
-/*# sourceMappingURL=base.css.map */
+/*# sourceMappingURL=main.css.map */

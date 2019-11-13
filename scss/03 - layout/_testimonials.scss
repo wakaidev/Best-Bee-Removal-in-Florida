@@ -1,0 +1,39 @@
+.testimonials {
+  display: grid;
+  grid-template-rows: 100px 1fr;
+  gap: 10px;
+}
+
+.testimonials__heading {
+  grid-row: 1 / 2;
+  text-align: center;
+  align-self: center;
+}
+
+.testimonial {
+  background-image: url("../img/bee1.jpg");
+  background-color: #444;
+  background-blend-mode: multiply;
+  background-size: cover;
+  border-radius: 5px;
+  color: white;
+  padding: 1em;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonial__title {
+  font-size: 1.2em;
+  text-decoration-line: underline;
+  padding-bottom: 1em;
+}
+
+.testimonial__name {
+  font-size: 1em;
+  padding-bottom: 1em;
+}
+
+.testimonial__text {
+  text-align: center;
+}
