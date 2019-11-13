@@ -36,7 +36,7 @@
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-size: calc(1em + 1vw);
+  font-size: calc(1em + 0.8vw);
   font-family: 'Lexend Deca', sans-serif;
 }
 
@@ -478,11 +478,8 @@ header,
   }
 }
 
-@media screen and (max-width: 620px) {
-  .about {
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
-  }
+.about .about__text {
+  padding: 1em;
 }
 
 .about h2 {
@@ -498,10 +495,6 @@ header,
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.about p.about-text {
-  padding: 1rem 1rem 2rem 1rem;
 }
 
 .services {
@@ -651,7 +644,7 @@ header,
   margin-left: auto;
 }
 
-.blog .post {
+.post {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -666,72 +659,72 @@ header,
   gap: 10px;
 }
 
-.blog .post > * {
+.post > * {
   -ms-grid-column: 2;
   -ms-grid-column-span: 1;
   grid-column: 2 / 3;
 }
 
-.blog .post h2 {
+.post h2 {
   text-align: center;
   padding: 2rem 1rem;
 }
 
-.blog .post .date {
+.post .date {
   text-decoration: underline;
 }
 
-.blog .post figure {
+.post figure {
   margin: 0;
   grid-column: 1 / -1;
 }
 
-.blog .post figcaption {
+.post figcaption {
   font-size: 10px;
 }
 
-.blog .post blockquote {
+.post blockquote {
   grid-column: 1 / -1;
   font-size: 1.5em;
   text-align: center;
   margin: 0;
 }
 
-.blog .post .tip {
+.post .tip {
   background: #FAFAFA;
   padding: 10px;
   border: 2px solid yellow;
 }
 
 @media (min-width: 720px) {
-  .blog .post {
+  .post {
     -ms-grid-columns: 3fr 12fr 5fr;
         grid-template-columns: 3fr 12fr 5fr;
   }
-  .blog .post h2 {
+  .post h2 {
     padding-left: 0;
     margin-left: 0;
     text-align: left;
   }
-  .blog .post > * {
+  .post > * {
     grid-column: 2 / -2;
   }
-  .blog .post figure {
+  .post figure {
     margin: 0;
     grid-column: 1 / -1;
   }
-  .blog .post .tip {
+  .post .tip {
     grid-row: span 5;
     -ms-flex-item-align: start;
         -ms-grid-row-align: start;
         align-self: start;
   }
-  .blog .post .tip-right {
+  .post .tip-right {
     grid-column: span 1 / -1;
     border: none;
     border-left: 2px solid yellow;
   }
-  .blog .post .tip-left {
+  .post .tip-left {
     -ms-grid-column: 1;
     -ms-grid-column-span: 1;
     grid-column: 1 / span 1;
@@ -739,7 +732,7 @@ header,
     border: none;
     border-right: 2px solid yellow;
   }
-  .blog .post blockquote {
+  .post blockquote {
     padding: 0.5em 1em;
   }
 }
