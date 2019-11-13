@@ -590,7 +590,7 @@ header,
   gap: 10px;
 }
 
-.testimonials h2 {
+.testimonials__heading {
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
   grid-row: 1 / 2;
@@ -600,7 +600,7 @@ header,
       align-self: center;
 }
 
-.testimonials .testimonial {
+.testimonial {
   background-image: url("../img/bee1.jpg");
   background-color: #444;
   background-blend-mode: multiply;
@@ -617,19 +617,19 @@ header,
           flex-direction: column;
 }
 
-.testimonials .testimonial .testimonial-title {
+.testimonial__title {
   font-size: 1.2em;
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
   padding-bottom: 1em;
 }
 
-.testimonials .testimonial .testimonial-name {
+.testimonial__name {
   font-size: 1em;
   padding-bottom: 1em;
 }
 
-.testimonials .testimonial p {
+.testimonial__text {
   text-align: center;
 }
 
@@ -764,8 +764,8 @@ footer {
           align-items: center;
 }
 
-footer .icon-credit,
-footer .icon-credit > * {
+.icon-credit,
+.icon-credit > * {
   font-size: 1px;
   display: none;
 }
