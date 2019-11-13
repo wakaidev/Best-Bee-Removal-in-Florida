@@ -1,7 +1,7 @@
 .services {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax($auto-grid-min-size, 1fr));
-  grid-template-rows: 100px 1fr;
+  grid-template-rows: auto 1fr;
   gap: 10px;
   justify-items: center;
 
@@ -13,6 +13,7 @@
 .services__header {
   grid-column: 1 / -1;
   align-self: center;
+  
 }
 
 .service {
@@ -53,4 +54,6 @@
 
 .service__header {
   font-size: 2em;
+  height: 3em;
+  text-decoration: underline;
 }

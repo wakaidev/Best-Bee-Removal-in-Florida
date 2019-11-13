@@ -105,8 +105,8 @@ select {
   #BODY-STYLES
 \*------------------------------------*/
 body {
-  background-image: url("../img/topography.svg"), -webkit-gradient(linear, left top, left bottom, from(#f3f72b), to(#949494));
-  background-image: url("../img/topography.svg"), linear-gradient(180deg, #f3f72b, #949494);
+  background-image: url(../../img/topography.svg), -webkit-gradient(linear, left top, left bottom, from(#f3f72b), to(#949494));
+  background-image: url(../../img/topography.svg), linear-gradient(180deg, #f3f72b, #949494);
   background-size: 350px, auto;
   min-height: calc(100vh - 100px);
   background-attachment: fixed;
@@ -412,6 +412,7 @@ header > nav > ul > li > a > svg {
 }
 
 .about {
+  margin-bottom: 10px;
   position: relative;
   overflow: hidden;
   background: rgba(0, 0, 0, 0.5);
@@ -476,8 +477,8 @@ header > nav > ul > li > a > svg {
   display: grid;
   -ms-grid-columns: (minmax(240px, 1fr))[auto-fill];
       grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  -ms-grid-rows: 100px 1fr;
-      grid-template-rows: 100px 1fr;
+  -ms-grid-rows: auto 1fr;
+      grid-template-rows: auto 1fr;
   gap: 10px;
   justify-items: center;
 }
@@ -542,6 +543,8 @@ header > nav > ul > li > a > svg {
 
 .service__header {
   font-size: 2em;
+  height: 3em;
+  text-decoration: underline;
 }
 
 .testimonials {
