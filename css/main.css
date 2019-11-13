@@ -103,7 +103,7 @@ select {
 */
 /*------------------------------------*\
   #BODY-STYLES
-\*------------------------------------*/
+\*-----------------------------------*/
 body {
   background-image: url(../../img/topography.svg), -webkit-gradient(linear, left top, left bottom, from(#f3f72b), to(#949494));
   background-image: url(../../img/topography.svg), linear-gradient(180deg, #f3f72b, #949494);
@@ -504,7 +504,7 @@ header > nav > ul > li > a > svg {
 }
 
 .bee-removal-service {
-  background-image: url("../img/bee1.jpg");
+  background-image: url("../img/bee1resize.jpg");
 }
 
 .wasp-removal-service {
@@ -566,7 +566,7 @@ header > nav > ul > li > a > svg {
 }
 
 .testimonial {
-  background-image: url("../img/bee1.jpg");
+  background-image: url("../img/bee1resize.jpg");
   background-color: #444;
   background-blend-mode: multiply;
   background-size: cover;
