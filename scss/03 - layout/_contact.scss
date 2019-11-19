@@ -25,7 +25,7 @@
 .contact__call,
 .contact__sms {
   background: grey;
-  background: linear-gradient(180deg, grey, lightgrey);
+  
   
   
   color: black;
@@ -37,6 +37,16 @@
 
   @media (min-width: 320px) {
     padding: 2em;
+  }
+
+  &:hover {
+    background-color: lightgrey;
+    cursor: pointer;
+    color: yellow;
+  }
+
+  &:active {
+    box-shadow: none;
   }
 }
 
