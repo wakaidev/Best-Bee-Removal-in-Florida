@@ -33,9 +33,9 @@
     <input type="checkbox" class="nav-toggle" id="nav-toggle" title="navigation toggle button">
     <nav>
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#blog">Blog</a></li>
-        <li><a href="https://facebook.com" target="_blank">
+        <li><a href="#" aria-label="Home Page">Home</a></li>
+        <li><a href="#blog" aria-label="Read our blog">Blog</a></li>
+        <li><a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Click to go to our facebook page" title="Go to our FB Page">
           <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
             x="0px" y="0px" viewbox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
             <g>
@@ -46,7 +46,7 @@
             </g>
           </svg>
         </a></li>
-        <li><a href="tel:1-954-830-2337">call</a></li>
+        <li><a href="tel:1-954-830-2337" aria-label="Call US">call</a></li>
       </ul>
     </nav>
     <label for="nav-toggle" class="nav-toggle-label">
@@ -57,10 +57,10 @@
   <div class="content">
 
     <div class="container contact">
-      <a class="contact__call" href="tel:1-954-830-2337">
+      <a class="contact__call" href="tel:1-954-830-2337" aria-label="click to call">
         CALL US 24/7
       </a>
-      <a class= "contact__sms" href="sms:1-954-830-2337">
+      <a class= "contact__sms" href="sms:1-954-830-2337" aria-label="click to sms message">
         TEXT US 24/7
       </a>
       
@@ -144,7 +144,7 @@
     
         <div class="tip tip-right">
           <p>In a blog post you could link to a website about a
-            <a href="https://en.wikipedia.org/wiki/Bee" target="_blank">Relvant Topics</a> like a wikipedia article about
+            <a href="https://en.wikipedia.org/wiki/Bee" target="_blank" rel="noopener">Relvant Topics</a> like a wikipedia article about
             bee's
           </p>
         </div>
