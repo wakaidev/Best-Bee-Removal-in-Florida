@@ -128,7 +128,8 @@ body {
   }
 }
 
-.contact,
+.contact__call,
+.contact__sms,
 .about,
 .service,
 .blog,
@@ -353,62 +354,69 @@ header > nav > ul > li > a > svg {
   #CONTACT
 \*------------------------------------*/
 .contact {
-  grid-column: 1 / -1;
-  background: grey;
-  background: -webkit-gradient(linear, left top, left bottom, from(grey), to(lightgrey));
-  background: linear-gradient(180deg, grey, lightgrey);
-  text-align: center;
   margin-bottom: 1em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
-  align-items: center;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
-.contact a {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  padding: 2rem 2rem;
-  -webkit-text-decoration-style: none;
-          text-decoration-style: none;
-  text-align: center;
-}
-
-@media screen and (min-width: 720px) {
-  .contact a {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+@supports (display: grid) {
+  .contact {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    gap: 1em;
+  }
+  @media (min-width: 320px) {
+    .contact {
+      -ms-grid-columns: 1fr 1fr;
+          grid-template-columns: 1fr 1fr;
+    }
   }
 }
 
-.contact * {
+.contact__call,
+.contact__sms {
+  background: grey;
+  background: -webkit-gradient(linear, left top, left bottom, from(grey), to(lightgrey));
+  background: linear-gradient(180deg, grey, lightgrey);
   color: black;
   text-decoration: none;
   font: inherit;
+  text-align: center;
+  padding: 1em;
+}
+
+@media (min-width: 320px) {
+  .contact__call,
+  .contact__sms {
+    padding: 2em;
+  }
+}
+
+.contact__call {
+  margin-right: 1em;
+}
+
+@supports (display: grid) {
+  .contact__call {
+    margin-right: 0;
+  }
+}
+
+.cotact__sms {
+  margin-left: 1em;
+}
+
+@supports (display: grid) {
+  .cotact__sms {
+    margin-left: 0;
+  }
 }
 
 .blog__header {
