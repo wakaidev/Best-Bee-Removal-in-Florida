@@ -3,5 +3,9 @@ node_js:
   - 10
 before_install:
   - npm install -g @lhci/cli@0.3.x
+addons:
+  chrome: stable
+script:
+  - npm run build
 after_success:
   - lhci autorun --upload.target=temporary-public-storage # run lighthouse CI against your static site
