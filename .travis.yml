@@ -5,7 +5,7 @@ node_js:
 addons:
   chrome: stable
 before_install:
-  - npm install -g @lhci/cli@0.3.x
+  - npm install -g @lhci/cli
 script:
   - npm run build # build your site
   - npm test # run your normal tests
