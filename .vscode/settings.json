@@ -1,8 +1,9 @@
 {
-    "liveServer.settings.https": {
-        "enable": true,
-        "cert": "/Users/mccomasd/Desktop/Dev/cert/localhost.pem",
-        "key": "/Users/mccomasd/Desktop/Dev/cert/localhost.key",
-        "passphrase": "12345"
-    }
+  "liveServer.settings.https": {
+    "enable": true,
+    "cert": "/Users/mccomasd/Desktop/Dev/cert/localhost.pem",
+    "key": "/Users/mccomasd/Desktop/Dev/cert/localhost.key",
+    "passphrase": "12345"
+  },
+  "editor.formatOnSave": true
 }
