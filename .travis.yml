@@ -5,6 +5,7 @@ node_js:
 addons:
   chrome: stable
 before_install:
+  - npm install -g @lhci/server
   - npm install -g @lhci/cli
 script:
   - npm run build # build your site
