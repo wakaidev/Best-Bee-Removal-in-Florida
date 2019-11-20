@@ -1,0 +1,19 @@
+{
+  "name": "beebusiness",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wakaidev/Best-Bee-Removal-in-Florida.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wakaidev/Best-Bee-Removal-in-Florida/issues"
+  },
+  "homepage": "https://github.com/wakaidev/Best-Bee-Removal-in-Florida#readme"
+}
