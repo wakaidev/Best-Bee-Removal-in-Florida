@@ -2,8 +2,8 @@ language: node_js
 node_js:
   - 10
 before_install:
-  - npm install -g @lhci/cli@0.3.x
+  - npm install -g @lhci/cli
 addons:
   chrome: stable
 script:
-  - lhci autorun
+  - lhci healthcheck
