@@ -156,7 +156,8 @@ header {
 /* changed this from the tutorial video to
    allow it to gain focus, making it tabbable */
 .logo {
-  font-size: 1.2em;
+  font-size: 0.8em;
+  display: none;
 }
 
 .nav-toggle {
