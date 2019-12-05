@@ -172,7 +172,7 @@ header {
 
 .nav-toggle-label {
   position: absolute;
-  top: 0;
+  top: 1em;
   left: 0;
   margin-left: 1em;
   height: 100%;
@@ -212,7 +212,7 @@ header {
 nav {
   position: absolute;
   text-align: left;
-  top: 100%;
+  top: 1.7em;
   left: 0;
   background: white;
   width: 100%;
